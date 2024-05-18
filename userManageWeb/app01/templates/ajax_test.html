@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>ajax和后端联调</h1>
+<button id="btnGetAjax">发送get请求</button>
+<button id="btnPostAjax">发送post请求</button>
+
+{% endblock %}
+{% block js %}
+<script>
+    $(document).ready(function(){
+      $("#btnGetAjax").click(function(){
+
+        data = {'name':'chenmin','age':30};
+        $.ajax({
+            url:"/testAjaxGet/",
+            type:'get',
+            data:data,
+            dataType:'json',
+            success:function(result){
+                console.log(result);
+            }
+        });
+      });
+
+      $("#btnPostAjax").click(function(){
+
+        data = {'name':'chenmin','age':30};
+        $.ajax({
+            url:"/testAjaxPost/",
+            type:'post',
+            data:data,
+            dataType:'json',
+
+            success:function(result){
+                console.log(result);
+            }
+        });
+      });
+    });
+</script>
+{% endblock %}
+

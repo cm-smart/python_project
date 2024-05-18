@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>模板语法学习</h1>
+{{ name }}
+<div>{{ roles }}</div>
+<div>{{ roles.0 }}</div>
+<div>{{ roles.1 }}</div>
+<div>{{ roles.2 }}</div>
+
+<div>
+    {% for item in roles %}
+        <span>{{ item }}</span>
+    {% endfor %}
+</div>
+<hr>
+<div>{{user_info.name}}</div>
+<div>{{user_info.salary}}</div>
+<div>{{user_info.role}}</div>
+<!--<div>-->
+<!--    {% for key,value in user_info.items %}-->
+<!--        <span>{{ key }</span>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+{% if name == '陈敏' %}
+    <h4>哈哈哈</h4>
+{% else %}
+    <h4>大大大</h4>
+{% endif %}
+</body>
+</html>
